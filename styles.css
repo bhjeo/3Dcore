@@ -237,3 +237,28 @@ model-viewer > #ar-prompt > img {
                   :not(:defined)>* {
                     display: none;
                   }
+
+/* AR button and prompt */
+#ar-button {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: block !important;
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #16a5e6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+/* 모바일에서 AR 버튼 보이도록 */
+@media (max-width: 768px) {
+  #ar-button {
+    bottom: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
