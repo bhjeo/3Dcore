@@ -1,0 +1,18 @@
+<model-viewer src="test.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+    <button class="Hotspot" slot="hotspot-1" data-position="0.10991408547980924m 0.11164351417920586m 0.0356352962423441m" data-normal="0.17192121780310057m 0.6050719208064442m 0.7773873330076192m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">격지면</div>
+    </button><button class="Hotspot" slot="hotspot-2" data-position="0.11119448533634667m 0.12352602749914865m 0.018936198677719007m" data-normal="0.1085054320207845m 0.7864726091367881m -0.6080192482969234m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">때림면</div>
+    </button><button class="Hotspot" slot="hotspot-3" data-position="0.15199837202108016m 0.07557558747571616m 0.03230091543072156m" data-normal="0.5692491957668622m -0.5177286170118968m -0.6386802269099378m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">측면</div>
+    </button>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+</model-viewer>

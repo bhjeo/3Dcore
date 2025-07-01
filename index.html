@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="<model-viewer> template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><model-viewer> template</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Load model-viewer library first -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <!-- Then load our script -->
+    <script type="module" src="script.js"></script>
+
+    <model-viewer
+      id="dimension-demo"
+      ar
+      ar-modes="webxr"
+      ar-scale="fixed"
+      camera-orbit="-30deg auto auto"
+      max-camera-orbit="auto 100deg auto"
+      shadow-intensity="1"
+      camera-controls
+      touch-action="pan-y"
+      src="test.glb"
+      alt="3D model"
+    >
+      <button slot="hotspot-dim+X-Y" class="dim" data-position="1 -1 0" data-normal="1 0 0"></button>
+      <button slot="hotspot-dot+X-Y-Z" class="dot" data-position="1 -1 -1" data-normal="1 0 0"></button>
+      <button slot="hotspot-dim+X-Z" class="dim" data-position="1 0 -1" data-normal="1 0 0"></button>
+      <button slot="hotspot-dot+X+Y-Z" class="dot" data-position="1 1 -1" data-normal="0 1 0"></button>
+      <button slot="hotspot-dim+Y-Z" class="dim" data-position="0 -1 -1" data-normal="0 1 0"></button>
+      <button slot="hotspot-dot-X+Y-Z" class="dot" data-position="-1 1 -1" data-normal="0 1 0"></button>
+      <button slot="hotspot-dim-X-Z" class="dim" data-position="-1 0 -1" data-normal="-1 0 0"></button>
+      <button slot="hotspot-dot-X-Y-Z" class="dot" data-position="-1 -1 -1" data-normal="-1 0 0"></button>
+      <button slot="hotspot-dim-X-Y" class="dim" data-position="-1 -1 0" data-normal="-1 0 0"></button>
+      <button slot="hotspot-dot-X-Y+Z" class="dot" data-position="-1 -1 1" data-normal="-1 0 0"></button>
+      <svg id="dimLines" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="dimensionLineContainer">
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+        <line class="dimensionLine"></line>
+      </svg>
+      <div id="controls" class="dim glass">
+        <label for="src">Product:</label>
+         <select id="src">
+         <option value="test.glb">core</option>
+         </select><br>
+        <label for="show-dimensions">Show Dimensions:</label>
+          <input id="show-dimensions" type="checkbox" checked="true">
+      </div>
+      <button class="Hotspot" slot="hotspot-1" data-position="0.10991408547980924m 0.11164351417920586m 0.0356352962423441m" data-normal="0.17192121780310057m 0.6050719208064442m 0.7773873330076192m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">격지면</div>
+      </button><button class="Hotspot" slot="hotspot-2" data-position="0.11119448533634667m 0.12352602749914865m 0.018936198677719007m" data-normal="0.1085054320207845m 0.7864726091367881m -0.6080192482969234m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">때림면</div>
+      </button><button class="Hotspot" slot="hotspot-3" data-position="0.15199837202108016m 0.07557558747571616m 0.03230091543072156m" data-normal="0.5692491957668622m -0.5177286170118968m -0.6386802269099378m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">측면</div>
+      </button>
+
+      <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+    </model-viewer>
+  </body>
+</html>
